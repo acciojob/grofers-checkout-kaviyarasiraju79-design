@@ -1,21 +1,31 @@
-table {
-    width: 50%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-}
+window.onload = function () {
 
-th, td {
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-}
+    // Select all price cells
+    let prices = document.querySelectorAll(".price");
 
-th {
-    background-color: #f2f2f2;
-}
+    let total = 0;
 
-tr:last-child td {
-    font-weight: bold;
-    background-color: #dff0d8;
-}
+    // Calculate total
+    prices.forEach(function (price) {
+        total += parseInt(price.innerText);
+    });
+
+    // Select table
+    let table = document.querySelector("table");
+
+    // Create new row
+    let row = document.createElement("tr");
+
+    // Create new cell
+    let cell = document.createElement("td");
+
+    // Add total value
+    cell.colSpan = 2;
+    cell.innerText = total;
+
+    // Append cell to row
+    row.appendChild(cell);
+
+    // Append row to table
+    table.appendChild(row);
+};

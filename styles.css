@@ -1,12 +1,12 @@
 table {
     width: 50%;
-    border-collapse: collapse;
     margin: 20px auto;
+    border-collapse: collapse;
     font-family: Arial, sans-serif;
 }
 
 th, td {
-    border: 1px solid #000;
+    border: 1px solid black;
     padding: 10px;
     text-align: center;
 }
@@ -17,5 +17,5 @@ th {
 
 tr:last-child td {
     font-weight: bold;
-    background-color: #e8f5e9;
+    background-color: #dff0d8;
 }

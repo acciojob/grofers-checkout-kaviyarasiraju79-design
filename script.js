@@ -1,35 +1,31 @@
-function calculateTotal() {
-    // Get all price elements
-    const prices = document.querySelectorAll(".prices");
+window.onload = function () {
+
+    // Select all price cells
+    let prices = document.querySelectorAll(".prices");
 
     let total = 0;
 
-    // Calculate total price
-    prices.forEach(price => {
-        total += Number(price.textContent);
+    // Add all prices
+    prices.forEach(function(price) {
+        total += parseInt(price.innerText);
     });
 
-    // Get the table
-    const table = document.querySelector("table");
+    // Select the table
+    let table = document.getElementById("groceryTable");
 
-    // Create new row
-    const newRow = document.createElement("tr");
+    // Create a new row
+    let row = document.createElement("tr");
 
-    // Create new cell
-    const newCell = document.createElement("td");
+    // Create a new cell
+    let cell = document.createElement("td");
 
-    // Set colspan if needed
-    newCell.colSpan = 2;
-
-    // Add total text
-    newCell.textContent = total;
+    // Set colspan and total value
+    cell.colSpan = 2;
+    cell.innerText = total;
 
     // Append cell to row
-    newRow.appendChild(newCell);
+    row.appendChild(cell);
 
     // Append row to table
-    table.appendChild(newRow);
-}
-
-// Call the function
-calculateTotal();
+    table.appendChild(row);
+};

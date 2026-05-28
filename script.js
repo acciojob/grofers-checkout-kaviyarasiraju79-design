@@ -1,31 +1,29 @@
 window.onload = function () {
 
-  // Select all price cells
-  const prices = document.querySelectorAll(".price");
+    // Select all price cells
+    let prices = document.querySelectorAll(".price");
 
-  let total = 0;
+    let total = 0;
 
-  // Add all prices
-  prices.forEach(function(price) {
-    total += parseInt(price.innerText);
-  });
+    // Calculate total
+    for (let i = 0; i < prices.length; i++) {
+        total += Number(prices[i].innerText);
+    }
 
-  // Select table
-  const table = document.querySelector("table");
+    // Get table
+    let table = document.querySelector("table");
 
-  // Create new row
-  const row = document.createElement("tr");
+    // Create new row
+    let newRow = document.createElement("tr");
 
-  // Create new cell
-  const cell = document.createElement("td");
+    // Create new cell
+    let newCell = document.createElement("td");
 
-  // Set colspan and total
-  cell.colSpan = 2;
-  cell.innerText = total;
+    // Add total value
+    newCell.setAttribute("colspan", "2");
+    newCell.innerText = total;
 
-  // Append cell to row
-  row.appendChild(cell);
-
-  // Append row to table
-  table.appendChild(row);
+    // Append elements
+    newRow.appendChild(newCell);
+    table.appendChild(newRow);
 };
